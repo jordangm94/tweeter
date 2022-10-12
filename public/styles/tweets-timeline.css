@@ -20,7 +20,7 @@
   /* background-color: red; */
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1em;
+  padding-bottom: 0.1em;
 }
 
 /* Must add in adjustment for CROW SIZE */
@@ -28,9 +28,9 @@
 /*This holds the text of the tweet in a <p>, as well as bottom underline of container for aesthetic purposes*/
 .tweet-container {
   /* background-color: red; */
-  height: 140px;
+  height: 120px;
   border-bottom: 5px solid #545149;
-  padding-bottom: 1.0em;
+  padding-bottom: ;
   display: flex;
   align-items: center;
 }

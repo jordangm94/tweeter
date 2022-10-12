@@ -32,20 +32,18 @@ const element = `
 <header class="tweet-header">
   <div class="tweet-userphoto-username">
     <div>
-      <i class="fa-solid fa-crow fa-2xl"></i>
+      <img src=${tweetdata.user.avatars}>
       <label>${tweetdata.user.name}</label>
     </div>
-    <label> @Ravensoftware </label>
+    <label>${tweetdata.user.handle}</label>
   </div>
   <div class="tweet-container">
     <p class="tweet-user-text">
-      🎉 2XP is live through Monday in #Warzone. 🪖 Whether it's
-      Caldera, Fortune's Keep, or Rebirth Island, we'll see you out
-      there!
+    ${tweetdata.content.text}
     </p>
   </div>
   <footer class="tweet-footer">
-    <div class="day-counter">10 days</div>
+    <div class="day-counter">${tweetdata.created_at}</div>
     <div class="social-icons">
       <i class="fa-solid fa-flag">  </i>
       <i class="fa-solid fa-heart">  </i>
