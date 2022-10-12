@@ -18,6 +18,15 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+}
+
+main {
+  /* Do not reference color and background color here, because main is within body, hence will take body color*/
+  width: 90%;
+  /* First value (1 em) is separating that amount of space from top and bottom, second value (auto) is centering the box*/
+  margin: 1em auto;
 }
 
 /*

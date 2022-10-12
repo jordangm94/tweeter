@@ -1,0 +1,18 @@
+/* Target the header that specifically belongs to the body, intended for backdrop of profile picture! */
+#profile-header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 120px;
+  background-color: #1b1c24;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+#profile-name {
+  color: black;
+  font-weight: 1000;
+}

@@ -1,0 +1,29 @@
+/*Important Notes: Whent targetting an ID you need a hashtag to start, but when targetting a class use a period to start*/
+#label-textarea {
+  display: flex;
+  flex-direction: column;
+}
+/*Provide tweet input area with an underline appearance rather than a whole form appearance*/
+#tweet-text {
+  border: none;
+  border-bottom: 5px solid #545149;
+  background: none;
+}
+
+/*Center all items within the footer and push them to opposite sides*/
+.maintweet-footer {
+  /*Add space between text area, and button/charachter count*/
+  padding-top: 1.0em;
+  display: flex;
+  /*Center the items along the cross axis*/
+  align-items: center;
+  /*Align flex items along main axis*/
+  justify-content: space-between;
+}
+/* Style the tweet button to match format of our logo in top left corner */
+#tweet-button {
+  color: #ffffff;
+  font-family: 'Bungee';
+  background-color: #3b63ea;
+}
+

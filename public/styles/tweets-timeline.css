@@ -1,0 +1,56 @@
+/* Space out the tweet timeline from the new-tweet box*/
+.tweets-timeline {
+  padding-top: 2.5em;
+}
+
+/* hover is a pseudoclass that provides a certain appearance on the tweet box while hovering over it.*/
+.tweet-box:hover {
+  box-shadow: 5px 10px;
+}
+
+/* This will display tweet in a box*/
+.tweet-header {
+  border: 5px solid #545149;
+  height: 300px;
+  width: 100%;
+  padding: 1.5em;
+}
+/*This encapsulates the user photo and username on opposite ends of the top of the tweet box*/
+.tweet-userphoto-username {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1em;
+}
+
+/* Must add in adjustment for CROW SIZE */
+
+/*This holds the text of the tweet in a <p>, as well as bottom underline of container for aesthetic purposes*/
+.tweet-container {
+  /* background-color: red; */
+  height: 140px;
+  border-bottom: 5px solid #545149;
+  padding-bottom: 1.0em;
+  display: flex;
+  align-items: center;
+}
+
+.tweet-footer {
+  padding-top: 0.8em;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*These hover effects below will add a certain colour style to the flag, heart and retweet icons when the moust hovers over each of them*/
+
+.fa-solid.fa-flag:hover {
+  color:burlywood
+
+}
+.fa-solid.fa-heart:hover {
+  color:burlywood
+
+}
+.fa-solid.fa-retweet:hover {
+  color:burlywood
+}
