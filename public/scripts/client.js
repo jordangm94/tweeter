@@ -13,9 +13,10 @@ $(document).ready(function() {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(value);
       // takes return value and appends it to the tweets container
-      $('.tweets-timeline').append($tweet);
+      $(".tweets-timeline").prepend($tweet);
     }
   };
+
   //This function creates a new tweet element by taking the data passed to it from above and passing the data points into specific area of the tweet template, using template literals.
   //We took this HTML straight from our initial index.html file and put it here, that way we can pass any tweets information and they can be made to appear as the tweet template.
   const createTweetElement = function(tweetdata) {
@@ -55,35 +56,45 @@ $(document).ready(function() {
     //Next we are going to seralize the data so that it is "encoded" into a string that the browser can understand.
     const formData = $(this).serialize();
     //Now let's create a variable to hold the counter for when we address it in conditional statements.
-    let counter = $('.counter').val();
+    let counter = $(".counter").val();
     //Create if conditional statements to handle what happens if, tweet is empty or over charachter limit.
+    //Because form data is serialized, it will always start with 'text=', so 'text=' here is equivalent to ''.
     if (formData === "text=") {
-      return alert('Error: Your tweet is empty. Please try again!');
-    } else if (counter < 0) {
-      return alert('Error: Your tweet is over the charachter limit. Please try again!');
-      //If these two conditions do not occur, than allow the tweet post request to go through.
-    } else {
-      //Using AJAX, we pass it the method, form data and which URL we are making this post request to.
-      $.ajax({
-        method: "POST",
-        data: formData,
-        url: "/tweets"
-        //Using Ajax allows us to send the tweet out asynchronously; hence, we do not need a page refresh!
-      });
+      return alert("Error: Your tweet is empty. Please try again!");
     }
+
+    if (counter < 0) {
+      return alert(
+        "Error: Your tweet is over the charachter limit. Please try again!"
+      );
+      //If these two conditions do not occur, than allow the tweet post request to go through.
+    }
+
+    //Using AJAX, we pass it the method, form data and which URL we are making this post request to.
+    $.ajax({
+      method: "POST",
+      data: formData,
+      url: "/tweets",
+      //Using Ajax allows us to send the tweet out asynchronously; hence, we do not need a page refresh!
+    });
+    //Below we are going to empty the timeline of tweets and all its children (individual tweets). Must do that because if not, when we call loadtweets next, will have duplicated tweets!
+    $(".tweets-timeline").empty();
+    //Now we call the loadtweets function to reload the page upon tweet submission so that our updated timeline of tweets appears.
+    loadTweets();
   });
 
   //With this function we are using AJAX to make a GET request to/tweets asynchronously so we will not need a page refresh.
   //Once we get the /tweets page, we will receive the tweets in an array, we pass those tweets(response) into our renderTweet function.
   const loadTweets = function() {
     $.ajax({
-      method: 'GET',
+      method: "GET",
       dataType: "json",
       url: "/tweets",
       success: function(response) {
         renderTweets(response);
-      }
+      },
     });
   };
+  //Note this function call loads the tweets upon the page being loaded since this is all within document.ready!
   loadTweets();
 });
