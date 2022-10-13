@@ -54,17 +54,27 @@ $(document).ready(function() {
     event.preventDefault();
     //Next we are going to seralize the data so that it is "encoded" into a string that the browser can understand.
     const formData = $(this).serialize();
-    //Next we use AJAX, we pass it the method, form data and which URL we are making this post request to.
-    $.ajax({
-      method: "POST",
-      data: formData,
-      url: "/tweets"
-      //Using Ajax allows us to send the tweet out asynchronously; hence, we do not need a page refresh!
-    });
+    //Now let's create a variable to hold the counter for when we address it in conditional statements.
+    let counter = $('.counter').val();
+    //Create if conditional statements to handle what happens if, tweet is empty or over charachter limit.
+    if (formData === "text=") {
+      return alert('Error: Your tweet is empty. Please try again!');
+    } else if (counter < 0) {
+      return alert('Error: Your tweet is over the charachter limit. Please try again!');
+      //If these two conditions do not occur, than allow the tweet post request to go through.
+    } else {
+      //Using AJAX, we pass it the method, form data and which URL we are making this post request to.
+      $.ajax({
+        method: "POST",
+        data: formData,
+        url: "/tweets"
+        //Using Ajax allows us to send the tweet out asynchronously; hence, we do not need a page refresh!
+      });
+    }
   });
 
   //With this function we are using AJAX to make a GET request to/tweets asynchronously so we will not need a page refresh.
-  //Once we get the /tweets page, we will receive the tweets in an array, we pass those tweets(response) into our renderTweet function. 
+  //Once we get the /tweets page, we will receive the tweets in an array, we pass those tweets(response) into our renderTweet function.
   const loadTweets = function() {
     $.ajax({
       method: 'GET',
