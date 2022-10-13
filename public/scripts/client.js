@@ -73,14 +73,24 @@ $(document).ready(function() {
   return element;
   }
   renderTweets(data);
+
+  //The next line uses JQuery to target the tweet submit form, listen for submit event using .submit().
+  $("#submit-tweet-form").submit(function(event) {
+    //This next line prevents the submitting from making a post request to /tweets.
+    event.preventDefault();
+    //Next we are going to seralize the data so that it is "encoded" into a string that the browser can understand.
+    const formData= $(this).serialize();
+    //Next we use AJAX, we pass it the method, form data and which URL we are making this post request to.
+    $.ajax({
+      method: "POST",
+      data: formData,
+      url: "/tweets"
+      //Using Ajax allows us to send the tweet out asynchronously; hence, we do not need a page refresh!
+    })
+  });
 })
 
-// //This function below waits till document is loaded than performs. 
-// $(document).ready(function() {
-// //Here we will add a new vairable that holds the information from our function that creates a new tweet from tweet data.
-// const $tweet = createTweetElement(data);
-// //This console.log allows us to see in the console that our tweet data is printing correctly, with the information from data weaved into the correct places of the tweet template.
-// console.log($tweet);
-// //This next line appends the tweet data that was fit into the tweet template into the section of our page with the class.tweets-timeline, so tweets can be populated here dynamically. 
-// $('.tweets-timeline').append($tweet);
-// });
+// $("#submit-tweet").submit(functin(event) {
+
+// })
+
