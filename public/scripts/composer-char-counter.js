@@ -1,7 +1,7 @@
 $(document).ready(function() {
   //'$' initiates JQuery Syntax, target id of text area using #, .on is equivalent to addEventListener, listening for any input on text area.
 
-  $("#tweet-text").on("input", function() { 
+  $("#tweet-text").on("input", function() {
 
     //Returning this simply returns text area object, use .val function to get the value inputted in that object.
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
     if (remaining < 0) {
       counter.text(remaining).css("color", "red");
     } else {
-      counter.text(remaining).css( "color", "black");
+      counter.text(remaining).css("color", "black");
     }
-  })
+  });
 });
