@@ -21,7 +21,7 @@ $(document).ready(function() {
     if (remaining < 0) {
       counter.text(remaining).css("color", "red");
     } else {
-      counter.text(remaining).css("color", "black");
+      counter.text(remaining).css("color", "dimgray");
     }
   });
 });
