@@ -12,7 +12,7 @@ $(document).ready(function() {
     for (let value of tweets) {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(value);
-      // takes return value and prepends it to the tweets container, meaning it pins the tweet to the top of the timeline (Append would pin to the bottom). 
+      // takes return value and prepends it to the tweets container, meaning it pins the tweet to the top of the timeline (Append would pin to the bottom).
       $(".tweets-timeline").prepend($tweet);
     }
   };
@@ -55,6 +55,18 @@ $(document).ready(function() {
     return element;
   };
 
+  const createErrorMessage = function(errorMessage) {
+    const errorMessageBox =
+    `<div class="error-message-container">
+    <i class="fa-solid fa-triangle-exclamation fa-xl"></i>
+    <p class="error-message-text">${errorMessage}</p>
+    <i class="fa-solid fa-triangle-exclamation fa-xl"></i>
+    </div>`;
+    return errorMessageBox;
+  };
+  
+  $('.new-error').hide();
+
   //The next line uses JQuery to target the tweet submit form, listen for submit event using .submit().
   $("#submit-tweet-form").submit(function(event) {
     //This next line prevents the submitting from making a post request to /tweets.
@@ -63,24 +75,30 @@ $(document).ready(function() {
     const formData = $(this).serialize();
     //Now let's create a variable to hold the counter for when we address it in conditional statements.
     let counter = $(".counter").val();
-    //Create if conditional statements to handle what happens if, tweet is empty or over charachter limit.
+    //Create if conditional statements to handle what happens if, tweet is empty or over character limit.
     //Because form data is serialized, it will always start with 'text=', so 'text=' here is equivalent to ''.
     if (formData === "text=") {
-      return alert("Error: Your tweet is empty. Please try again!");
+      //Store error message for this condition in a variable, then pass it into function and append to desired area on webpage.
+      const emptyTweetError = 'Error: Your tweet is empty. Please try again!';
+      $(".new-error").append(createErrorMessage(emptyTweetError));
+      // $('.new-error').show();
+      return $(".new-error").slideDown(500);
     }
     if (counter < 0) {
-      return alert(
-        "Error: Your tweet is over the charachter limit. Please try again!"
-      );
-      //If these two conditions do not occur, than allow the tweet post request to go through.
+      const overCharacterLimitError = "Error: Your tweet is over the character limit. Please try again!";
+      $(".new-error").append(createErrorMessage(overCharacterLimitError));
+      return $(".new-error").slideDown(500);
     }
+    //If the above two conditions do not occur, than allow any error messages to slide up and proceed to POST, just in case user errors before successful tweet!
+    $(".new-error").slideUp(200);
     //Using AJAX, we pass it the method, form data and which URL we are making this post request to.
     $.ajax({
       method: "POST",
       data: formData,
       url: "/tweets",
       success: function() {
-        //Upon success of the Post Request, empty the timeline of tweets and all its children (individual tweets). Must do that because if not, when we call loadtweets next, will have duplicated tweets!
+        //Upon success of the Post Request, empty the timeline of tweets and all its children (individual tweets), as well as any errors. Must do that because if not, when we call loadtweets next, will have duplicated tweets!
+        $(".new-error").empty();
         $(".tweets-timeline").empty();
         //Now we call the loadtweets function to reload the page upon tweet submission so that our updated timeline of tweets appears.
         loadTweets();
@@ -88,6 +106,7 @@ $(document).ready(function() {
       //Using Ajax allows us to send the tweet out asynchronously; hence, we do not need a page refresh!
     });
   });
+
 
   //With this function we are using AJAX to make a GET request to/tweets asynchronously so we will not need a page refresh.
   //Once we get the /tweets page, we will receive the tweets in an array, we pass those tweets(response) into our renderTweet function.
