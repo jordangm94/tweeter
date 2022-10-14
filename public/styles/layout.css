@@ -30,23 +30,26 @@ main {
 }
 
 /*
- * Media Queries for various screen sizes, if on desktop!
+ * Media Queries for desktop view: If screen size is equal to or surpasses 1024px, apply the following changes to layout. 
  */
 
+ /*Move compose tweet and tweet timeline to the right half of the screen in a column, one on top of other*/
  @media only screen and (min-width: 1024px) {
   .container {
-    padding-top: 4em;
-    padding-right: 2em;
-    width: 50%;
+    margin-top: 6em;
+    margin-right: 2em;
+    width: 45%;
     display: flex;
     flex-direction: column;
     float: right;
   }
+
+  /*Drop profile header from the top of screen to the left half of the screen*/
   .profile-header-for-desktop {
-    padding-top: 4em;
+    margin-top: 2.9em;
+    margin-left: 1.5em;
     padding-left: 2em;
     width: 40%;
     float: left;
-
   }
  }

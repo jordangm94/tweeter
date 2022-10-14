@@ -71,6 +71,8 @@ $(document).ready(function() {
   $("#submit-tweet-form").submit(function(event) {
     //This next line prevents the submitting from making a post request to /tweets.
     event.preventDefault();
+    //Add clear error here, just in case a past error already exists. This way errors will not stack on one another. 
+    $(".new-error").empty();
     //Next we are going to seralize the data so that it is "encoded" into a string that the browser can understand.
     const formData = $(this).serialize();
     //Now let's create a variable to hold the counter for when we address it in conditional statements.
@@ -97,8 +99,9 @@ $(document).ready(function() {
       data: formData,
       url: "/tweets",
       success: function() {
+        //Set Text area to a value of nothing, that way tweet that was just posted does not stay in form. 
+        $("#tweet-text").val("")
         //Upon success of the Post Request, empty the timeline of tweets and all its children (individual tweets), as well as any errors. Must do that because if not, when we call loadtweets next, will have duplicated tweets!
-        $(".new-error").empty();
         $(".tweets-timeline").empty();
         //Now we call the loadtweets function to reload the page upon tweet submission so that our updated timeline of tweets appears.
         loadTweets();

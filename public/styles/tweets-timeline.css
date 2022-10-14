@@ -8,6 +8,10 @@
   box-shadow: 5px 10px;
 }
 
+.tweet-box {
+  margin-bottom: 1em;
+}
+
 /* This will display tweet in a box*/
 .tweet-header {
   border: 5px solid #545149;
