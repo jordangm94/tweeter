@@ -1,5 +1,3 @@
-/*This nav, without a period, is targetting all nav elements in our page.*/
-/*Note if it had a period it would be targetting all classes designated as Nav/*/
 nav.navbar-top {
   /*Box Model Properties*/
   color: #ffffff;
@@ -30,6 +28,7 @@ nav.navbar-top {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 0.8em
 }
 
 /*This applies the colour read to anything within the nav element AND within the i tag*/
