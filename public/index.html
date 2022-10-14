@@ -4,6 +4,10 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Disable viewport zooming -->
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+
     <!-- External CSS -->
     <link
       rel="stylesheet"
@@ -55,7 +59,7 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-
+    <div class="profile-header-for-desktop">
     <header id="profile-header">
       <div>
         <img src="/images/profile-hex.png" />
@@ -65,9 +69,11 @@
         <h2 id="profile-name">Jenelle Martinez</h2>
       </div>
     </header>
+    </div>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- <div class="new-tweet-tweets-timeline"> -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form id="submit-tweet-form" method="POST" action="/tweets">
@@ -85,6 +91,7 @@
         </form>
       </section>
       <section class="tweets-timeline"/>
+    <!-- </div> -->
     </main>
   </body>
 </html>

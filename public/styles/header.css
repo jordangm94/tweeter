@@ -1,5 +1,6 @@
 /* Target the header that specifically belongs to the body, intended for backdrop of profile picture! */
 #profile-header {
+  padding-top: 1em;
   display: flex;
   height: 400px;
   width: 100%;
