@@ -1,4 +1,6 @@
-/*Important Notes: Whent targetting an ID you need a hashtag to start, but when targetting a class use a period to start*/
+/*This document provides styles to the compose tweet area*/
+
+/*Important Notes: When targetting an ID you need a hashtag to start, but when targetting a class use a period to start*/
 #label-textarea {
   display: flex;
   flex-direction: column;
@@ -12,7 +14,7 @@
 
 /*Center all items within the footer and push them to opposite sides*/
 .maintweet-footer {
-  /*Add space between text area, and button/charachter count*/
+  /*Add space between text area, and button/character count*/
   padding-top: 1.0em;
   padding-bottom: 1.0em;
   display: flex;
@@ -28,6 +30,7 @@
   background-color: #3b63ea;
 }
 
+/*Styles for error messages that will appear write below tweet text area*/
 .error-message-container {
   background-color: #c51244;
   height: 3.5em;

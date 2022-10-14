@@ -1,3 +1,5 @@
+/*This document provides styles to each individual tweet or tweet box, within the timeline.*/
+
 /* Space out the tweet timeline from the new-tweet box*/
 .tweets-timeline {
   padding-top: 2.5em;
@@ -38,6 +40,7 @@
   align-items: center;
 }
 
+/*Apply space between items in */
 .tweet-footer {
   padding-top: 0.8em;
   display: flex;
@@ -45,7 +48,6 @@
 }
 
 /*These hover effects below will add a certain colour style to the flag, heart and retweet icons when the moust hovers over each of them*/
-
 .fa-solid.fa-flag:hover {
   color:burlywood
 

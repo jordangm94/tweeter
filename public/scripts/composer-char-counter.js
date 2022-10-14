@@ -1,3 +1,6 @@
+/*This file contains the javascript functionality for the character counter
+on the compose tweet area of the web app*/
+
 $(document).ready(function() {
   //'$' initiates JQuery Syntax, target id of text area using #, .on is equivalent to addEventListener, listening for any input on text area.
 

@@ -1,3 +1,6 @@
+/*This document provides styles for the header that contains the profile photo and name
+in the web app*/
+
 /* Target the header that specifically belongs to the body, intended for backdrop of profile picture! */
 #profile-header {
   padding-top: 1em;
@@ -13,6 +16,7 @@
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
+/*Adds color and font weight to the profile-name*/
 #profile-name {
   color: white;
   font-weight: 1000;
