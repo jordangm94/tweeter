@@ -101,6 +101,8 @@ $(document).ready(function() {
       success: function() {
         //Set Text area to a value of nothing, that way tweet that was just posted does not stay in form. 
         $("#tweet-text").val("")
+        //Reset the counter after tweet to the original 140 charachters!
+        $(".counter").val(140)
         //Upon success of the Post Request, empty the timeline of tweets and all its children (individual tweets), as well as any errors. Must do that because if not, when we call loadtweets next, will have duplicated tweets!
         $(".tweets-timeline").empty();
         //Now we call the loadtweets function to reload the page upon tweet submission so that our updated timeline of tweets appears.
