@@ -2,45 +2,45 @@
 
 /* Space out the tweet timeline from the new-tweet box*/
 .tweets-timeline {
-  padding-top: 2.5em;
+  padding-top: 1.5em;
 }
 
 /* hover is a pseudoclass that provides a certain appearance on the tweet box while hovering over it.*/
 .tweet-box:hover {
   box-shadow: 5px 10px;
 }
-
+/*Styles for tweet-box so that each tweet has a visible formatted contiainer*/
 .tweet-box {
   margin-bottom: 1em;
-}
-
-/* This will display tweet in a box*/
-.tweet-header {
   border: 5px solid #545149;
   height: 300px;
   width: 100%;
-  padding: 1.5em;
+  padding: 1.0em;
 }
+
 /*This encapsulates the user photo and username on opposite ends of the top of the tweet box*/
 .tweet-userphoto-username {
-  /* background-color: red; */
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.1em;
 }
 
-/* Must add in adjustment for CROW SIZE */
+/*Align user-handle on right of tweetbox with user name and avatar on left*/
+.user-handle {
+  padding-top: 1.45em;
+}
 
 /*This holds the text of the tweet in a <p>, as well as bottom underline of container for aesthetic purposes*/
 .tweet-container {
-  /* background-color: red; */
-  height: 120px;
+  margin-top:1.0em;
+  padding-left: 0.5em;
+  height: 100px;
+  border: none;
   border-bottom: 5px solid #545149;
-  display: flex;
-  align-items: center;
+  word-wrap: break-word;
 }
 
-/*Apply space between items in */
+/*Apply space between items in footer: Date & Icons */
 .tweet-footer {
   padding-top: 0.8em;
   display: flex;

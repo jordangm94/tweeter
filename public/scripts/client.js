@@ -33,22 +33,22 @@ $(document).ready(function() {
         <img src=${tweetdata.user.avatars}>
         <label>${escape(tweetdata.user.name)}</label>
       </div>
-      <label>${escape(tweetdata.user.handle)}</label>
+      <label class="user-handle">${escape(tweetdata.user.handle)}</label>
     </div>
-    <div class="tweet-container">
+  </header>
+  <div class="tweet-container">
       <p class="tweet-user-text">
       ${escape(tweetdata.content.text)}
       </p>
-    </div>
-    <footer class="tweet-footer">
+  </div>
+  <footer class="tweet-footer">
       <div class="day-counter">${timeago.format(tweetdata.created_at)}</div>
       <div class="social-icons">
         <i class="fa-solid fa-flag">  </i>
         <i class="fa-solid fa-heart">  </i>
         <i class="fa-solid fa-retweet">  </i>
       </div>
-      </footer>
-  </header>
+  </footer>
   </article>
   `;
     return element;
