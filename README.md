@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product:
 
-### Tweeter - Desktop View
+### Tweeter - Tweet Box & Character Counter
 
-!["Desktop View"](https://github.com/jordangm94/tweeter/blob/master/docs/Tweeter%20%20-%20Desktop%20View.png?raw=true)
+!["TweetBox"](https://github.com/jordangm94/tweeter/blob/master/docs/Tweeter%20-%20Tweetbox.png?raw=true)
 
 ### Tweeter - Desktop View
 
