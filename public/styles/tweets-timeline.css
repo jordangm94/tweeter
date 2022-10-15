@@ -38,6 +38,7 @@
   border: none;
   border-bottom: 5px solid #545149;
   word-wrap: break-word;
+  overflow: auto;
 }
 
 /*Apply space between items in footer: Date & Icons */

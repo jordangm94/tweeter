@@ -4,9 +4,9 @@ nav.navbar-top {
   /*Box Model Properties*/
   color: #ffffff;
   background-color: #3b63ea;
-  font-size: 30px;
-  font-family: "Source Sans Pro";
-  font-weight: 600;
+  /* font-size: 30px; */
+  /* font-family: "Source Sans Pro"; */
+  /* font-weight: 600; */
   height: 120px;
   width: 100vw;
   padding-right: 1.5em;
