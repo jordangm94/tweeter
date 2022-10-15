@@ -80,13 +80,13 @@ $(document).ready(function() {
     //Because form data is serialized, it will always start with 'text=', so 'text=' here is equivalent to ''.
     if (formData === "text=") {
       //Store error message for this condition in a variable, then pass it into function and append to desired area on webpage.
-      const emptyTweetError = 'Error: Your tweet is empty. Please try again!';
+      const emptyTweetError = 'Oops: Your tweet is empty. Please try again!';
       $(".new-error").append(createErrorMessage(emptyTweetError));
       // $('.new-error').show();
       return $(".new-error").slideDown(500);
     }
     if (counter < 0) {
-      const overCharacterLimitError = "Error: Your tweet is over the character limit. Please try again!";
+      const overCharacterLimitError = "Oops: Your tweet is over the character limit. Please try again!";
       $(".new-error").append(createErrorMessage(overCharacterLimitError));
       return $(".new-error").slideDown(500);
     }
