@@ -6,22 +6,21 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product:
 
-### 
+### Tweeter - Desktop View
 
-!["Login Page"](https://github.com/jordangm94/tinyapp/blob/master/docs/urls:login-page.png?raw=true)
+!["Desktop View"](https://github.com/jordangm94/tweeter/blob/master/docs/Tweeter%20%20-%20Desktop%20View.png?raw=true)
 
-### 
+### Tweeter - Desktop View
 
-!["How cookies appear after login"](https://github.com/jordangm94/tinyapp/blob/master/docs/urls:cookies.png?raw=true)
+!["Desktop View"](https://github.com/jordangm94/tweeter/blob/master/docs/Tweeter%20%20-%20Desktop%20View.png?raw=true)
 
-### 
+### Tweeter - Error Message
 
-!["My Shortened URLS Page"](https://github.com/jordangm94/tinyapp/blob/master/docs/urls-page.png?raw=true)
+!["Error Message"](https://github.com/jordangm94/tweeter/blob/master/docs/Tweeter%20-%20Error%20Message.png?raw=true)
 
-### 
+### Tweeter - Mobile View
 
-!["Create TinyURL Page"](https://github.com/jordangm94/tinyapp/blob/master/docs/urls:new-page.png?raw=true)
-
+!["Mobile View"](https://github.com/jordangm94/tweeter/blob/master/docs/Tweeter%20-%20Mobile%20View.png?raw=true)
 
 ## Getting Started
 
