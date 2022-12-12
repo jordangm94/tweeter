@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// CRUCIAL Note: All functions and function call must be placed within document ready. Functions cannot work with DOM objects if page not loaded.
+// CRUCIAL Note: All functions and function calls are placed within document ready in order to ensure that the document is completely rendered before functions are called.
 $(document).ready(function() {
   const renderTweets = function(tweets) {
     //Loops through array of tweet objects, each value will be an individual tweet object with user information.
